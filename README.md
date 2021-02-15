@@ -27,4 +27,5 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ### Notes
 Describe any challenges encountered while building the app.
+
 Applying the CocoaPods was confusing for example I did not know the difference between Alamofire and AlamofireImage at the first, so I was struggle a bit to understand the concept.
