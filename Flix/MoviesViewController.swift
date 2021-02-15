@@ -32,6 +32,9 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
            } else if let data = data {
               let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
+            self.movies = dataDictionary["results"] as! [[String:Any]]
+            self.tableView.reloadData()
+            
             print(dataDictionary)
               // TODO: Get the array of movies
               // TODO: Store the movies in a property to use elsewhere
@@ -54,7 +57,7 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         let cell = UITableViewCell()
         
         let movie = movies[indexPath.row]
-        let title = movie["title"] as! String 
+        let title = movie["title"] as! String
         
         cell.textLabel?.text = title
         
