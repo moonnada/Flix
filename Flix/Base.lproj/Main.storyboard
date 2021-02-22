@@ -66,6 +66,7 @@
                                             <outlet property="posterView" destination="TVW-Pa-OGe" id="dUr-SM-GyP"/>
                                             <outlet property="synopsisLabel" destination="IQx-te-NFw" id="SsT-Lp-kh6"/>
                                             <outlet property="titleLabel" destination="1Nh-5H-wND" id="oUb-ab-yog"/>
+                                            <segue destination="D8X-F3-VlL" kind="show" id="9Kh-HC-84m"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -88,6 +89,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
+        </scene>
+        <!--Movie Details View Controller-->
+        <scene sceneID="a5m-yP-RGB">
+            <objects>
+                <viewController id="D8X-F3-VlL" customClass="MovieDetailsViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RbX-rw-K6l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="aaY-yF-hKs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hxd-6U-CUu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PhJ-VS-RhU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="93"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i9X-jI-CzT">
