@@ -21,6 +21,16 @@ class MovieGridViewController: UIViewController,UICollectionViewDataSource, UICo
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout.minimumLineSpacing = 4  //포스터 위아래(세로) 간격
+        layout.minimumInteritemSpacing = 4
+        
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 2
+       
+        layout.itemSize = CGSize(width: width, height: width * 3 / 2)
+
+        
         let url = URL(string: "https://api.themoviedb.org/3/movie/297762/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -34,7 +44,7 @@ class MovieGridViewController: UIViewController,UICollectionViewDataSource, UICo
             self.movies = dataDictionary["results"] as! [[String:Any]]
            
             self.collectionView.reloadData()
-            print(self.movies)
+           // print(self.movies)
               // TODO: Get the array of movies
               // TODO: Store the movies in a property to use elsewhere
               // TODO: Reload your table view data
