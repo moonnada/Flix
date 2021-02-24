@@ -24,7 +24,7 @@ class MovieGridViewController: UIViewController,UICollectionViewDataSource, UICo
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
         layout.minimumLineSpacing = 4  //포스터 위아래(세로) 간격
-        layout.minimumInteritemSpacing = 4
+        layout.minimumInteritemSpacing = 4 
         
         let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 2
        
@@ -85,4 +85,20 @@ class MovieGridViewController: UIViewController,UICollectionViewDataSource, UICo
     }
     */
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        print("Loading up the movie details screen")
+    
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        
+        let detailsViewController = segue.destination as! HeroDetailsViewController
+        detailsViewController.movie = movie
+        
+//        collectionView.deselectRow(at: indexPath, animated: true)
+    
+    
+    }
+    
+    
 }

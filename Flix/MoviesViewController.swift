@@ -47,10 +47,6 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         
     }
     
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -69,7 +65,7 @@ class MoviesViewController: UIViewController,UITableViewDataSource, UITableViewD
         let posterPath = movie["poster_path"] as! String
         let posterUrl = URL(string: baseUrl + posterPath)
         
-        cell.posterView.af_setImage(withURL: posterUrl!)
+        cell.posterView.af_setImage(withURL:posterUrl!)
         return cell
     }
     
